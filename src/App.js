@@ -41,13 +41,14 @@ function App() {
             path="/"
             element={
               <TextForm
-                heading="Enter the text to anlayze"
+                showAlert={showAlert}
+                heading="TextUtils - Word Counter, Character Counter, Remove extra Spaces"
                 mode={mode}
               ></TextForm>
             }
           />
           ,
-          <Route path="/about" element={<About></About>} />
+          <Route path="/about" element={<About mode={mode}></About>} />
         </Routes>
       </BrowserRouter>
     </>
