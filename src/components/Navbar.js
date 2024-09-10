@@ -41,15 +41,50 @@ export default function Navbar(props) {
               role="search"
               style={{ margin: "0px 0px 0px 0px" }}
             >
-              {/* <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button> */}
+              {/* <div className="d-flex">
+                <div
+                  className="bg-primary rounded mx-2"
+                  style={{ height: "30px", width: "30px" }}
+                  onClick={() => {
+                    props.toggleMode("primary");
+                  }}
+                >
+                  {" "}
+                </div>
+              </div>
+              <div className="d-flex">
+                <div
+                  className="bg-danger rounded mx-2"
+                  style={{ height: "30px", width: "30px" }}
+                  // onClick={() => {
+                  //   props.toggleMode("danger");
+                  // }}
+                >
+                  {" "}
+                </div>
+              </div>
+              <div className="d-flex">
+                <div
+                  className="bg-success rounded mx-2"
+                  style={{ height: "30px", width: "30px" }}
+                  // onClick={() => {
+                  //   props.toggleMode("success");
+                  // }}
+                >
+                  {" "}
+                </div>
+              </div>
+              <div className="d-flex">
+                <div
+                  className="bg-warning rounded mx-2"
+                  style={{ height: "30px", width: "30px" }}
+                  // onClick={() => {
+                  //   props.toggleMode("warning");
+                  // }}
+                >
+                  {" "}
+                </div>
+              </div> */}
               <div
                 className={`form-check form-switch text-${
                   props.mode === "light" ? "dark" : "light"

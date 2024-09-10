@@ -1,22 +1,17 @@
 import React, { useState } from "react";
-export default function TextForm(props) {
+export default function TextForm({ mode, heading }) {
   const handleUpClick = () => {
-    // console.log("Upper case was clicked");
     let upperCase = text.toUpperCase();
     setText(upperCase);
   };
   const handleLowClick = () => {
-    // console.log("Upper case was clicked");
     let lowerCase = text.toLowerCase();
     setText(lowerCase);
-    console.log(props.heading);
   };
   const handleOnChange = (event) => {
-    // console.log("on change");
     setText(event.target.value);
   };
   const handleClearClick = () => {
-    // console.log("on change");
     setText("");
   };
   const handleRemoveSpaces = () => {
@@ -28,9 +23,9 @@ export default function TextForm(props) {
     <>
       <div
         className="container"
-        style={{ color: props.mode === "dark" ? "white" : "black" }}
+        style={{ color: mode === "dark" ? "white" : "black" }}
       >
-        <h1>{props.heading}</h1>
+        <h1 className="mb-4 mt-4">{heading}</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -39,24 +34,34 @@ export default function TextForm(props) {
             onChange={handleOnChange}
             value={text}
             style={{
-              backgroundColor: props.mode === "dark" ? "13466e" : "white",
-              color: props.mode === "dark" ? "white" : "black",
+              backgroundColor: mode === "dark" ? "13466e" : "white",
+              color: mode === "dark" ? "white" : "black",
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleUpClick}
+        >
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleLowClick}
+        >
           Convert to Lowercase
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleClearClick}
         >
           Clear
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleRemoveSpaces}
         >
@@ -65,7 +70,7 @@ export default function TextForm(props) {
       </div>
       <div
         className="container my-3"
-        style={{ color: props.mode === "dark" ? "white" : "black" }}
+        style={{ color: mode === "dark" ? "white" : "black" }}
       >
         <h1>Your text summary</h1>
         <p>
@@ -84,11 +89,7 @@ export default function TextForm(props) {
           minutes read
         </p>
         <h2>Preview</h2>
-        <p>
-          {text.length > 0
-            ? text
-            : "Enter something in the textbox to preview it here"}
-        </p>
+        <p>{text.length > 0 ? text : "Nothing to preview"}</p>
       </div>
     </>
   );
