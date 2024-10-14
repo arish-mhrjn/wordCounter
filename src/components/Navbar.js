@@ -1,13 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar(props) {
   return (
     <div>
       <nav
-        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
-      >
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
             {props.title}
@@ -19,8 +18,7 @@ export default function Navbar(props) {
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,8 +37,7 @@ export default function Navbar(props) {
             <form
               className="d-flex"
               role="search"
-              style={{ margin: "0px 0px 0px 0px" }}
-            >
+              style={{ margin: '0px 0px 0px 0px' }}>
               {/* <div className="d-flex">
                 <div
                   className="bg-primary rounded mx-2"
@@ -87,9 +84,8 @@ export default function Navbar(props) {
               </div> */}
               <div
                 className={`form-check form-switch text-${
-                  props.mode === "light" ? "dark" : "light"
-                }`}
-              >
+                  props.mode === 'light' ? 'dark' : 'light'
+                }`}>
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -101,9 +97,8 @@ export default function Navbar(props) {
                   className="form-check-label"
                   htmlFor="flexSwitchCheckDefault"
                   style={{
-                    color: props.mode === "light" ? "black" : "white",
-                  }}
-                >
+                    color: props.mode === 'light' ? 'black' : 'white',
+                  }}>
                   Dark Mode
                 </label>
               </div>
